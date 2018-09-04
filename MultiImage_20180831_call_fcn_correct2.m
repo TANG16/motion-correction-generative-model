@@ -532,15 +532,7 @@ for iMap=1:length(mapsName)
     clear thetaMaps
 end
 
-% save v for each map
-vMap= nifti;
-for iVel=numel(V)
-    vMap.mat = Nii(1).mat;
-    vMap.dat = file_array([outputFolder filesep mapsName{iMap} '.nii'], [size(Theta,1) size(Theta,2) size(Theta,3)], 'float32');
-    % vMap.dat = file_array([ mapsName{iMap} '.nii'], [size(Theta,1) size(Theta,2) size(Theta,3)], 'float32');
-    create(vMap);
-    vMap.dat(:,:,:) = v(:,:,:,iMap);
-end
+
 
 
 
